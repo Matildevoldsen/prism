@@ -51,9 +51,9 @@ class Images
         $providerOptions = $request->providerOptions();
 
         $supportedOptions = [
-            'num_images' => $providerOptions['num_images'] ?? $providerOptions['n'] ?? 1,
             'size' => $providerOptions['size'] ?? null,
             'response_format' => $providerOptions['response_format'] ?? 'url',
+            'watermark' => $providerOptions['watermark'] ?? false,
         ];
 
         $payload = array_merge($payload, array_filter($supportedOptions, fn ($v) => $v !== null));
