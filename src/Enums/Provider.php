@@ -19,4 +19,5 @@ enum Provider: string
     case ElevenLabs = 'elevenlabs';
     case Azure = 'azure';
     case Fireworks = 'fireworks';
+    case BytePlus = 'byteplus';
 }

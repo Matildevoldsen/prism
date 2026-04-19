@@ -10,6 +10,7 @@ use InvalidArgumentException;
 use Prism\Prism\Enums\Provider as ProviderEnum;
 use Prism\Prism\Providers\Anthropic\Anthropic;
 use Prism\Prism\Providers\Azure\Azure;
+use Prism\Prism\Providers\BytePlus\BytePlus;
 use Prism\Prism\Providers\DeepSeek\DeepSeek;
 use Prism\Prism\Providers\ElevenLabs\ElevenLabs;
 use Prism\Prism\Providers\Fireworks\Fireworks;
@@ -249,6 +250,17 @@ class PrismManager
         return new Fireworks(
             apiKey: $config['api_key'] ?? '',
             url: $config['url'] ?? 'https://api.fireworks.ai/inference/v1',
+        );
+    }
+
+    /**
+     * @param  array<string, string>  $config
+     */
+    protected function createByteplusProvider(array $config): BytePlus
+    {
+        return new BytePlus(
+            apiKey: $config['api_key'] ?? '',
+            url: $config['url'] ?? 'https://ark.ap-southeast.bytepluses.com/api/v3',
         );
     }
 }
