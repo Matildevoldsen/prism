@@ -11,6 +11,7 @@ use Prism\Prism\Enums\Provider as ProviderEnum;
 use Prism\Prism\Providers\Anthropic\Anthropic;
 use Prism\Prism\Providers\DeepSeek\DeepSeek;
 use Prism\Prism\Providers\ElevenLabs\ElevenLabs;
+use Prism\Prism\Providers\Fireworks\Fireworks;
 use Prism\Prism\Providers\Gemini\Gemini;
 use Prism\Prism\Providers\Groq\Groq;
 use Prism\Prism\Providers\Mistral\Mistral;
@@ -223,6 +224,17 @@ class PrismManager
         return new ElevenLabs(
             apiKey: $config['api_key'] ?? '',
             url: $config['url'] ?? 'https://api.elevenlabs.io/v1/',
+        );
+    }
+
+    /**
+     * @param  array<string, string>  $config
+     */
+    protected function createFireworksProvider(array $config): Fireworks
+    {
+        return new Fireworks(
+            apiKey: $config['api_key'] ?? '',
+            url: $config['url'] ?? 'https://api.fireworks.ai/inference/v1',
         );
     }
 }

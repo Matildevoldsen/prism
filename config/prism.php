@@ -60,5 +60,9 @@ return [
                 'x_title' => env('OPENROUTER_SITE_X_TITLE', null),
             ],
         ],
+        'fireworks' => [
+            'api_key' => env('FIREWORKS_API_KEY', ''),
+            'url' => env('FIREWORKS_URL', 'https://api.fireworks.ai/inference/v1'),
+        ],
     ],
 ];
