@@ -66,5 +66,9 @@ return [
             'api_version' => env('AZURE_AI_API_VERSION', '2024-10-21'),
             'deployment_name' => env('AZURE_AI_DEPLOYMENT', ''),
         ],
+        'fireworks' => [
+            'api_key' => env('FIREWORKS_API_KEY', ''),
+            'url' => env('FIREWORKS_URL', 'https://api.fireworks.ai/inference/v1'),
+        ],
     ],
 ];
