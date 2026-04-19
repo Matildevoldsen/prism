@@ -51,7 +51,7 @@ class Images
         $providerOptions = $request->providerOptions();
 
         $supportedOptions = [
-            'n' => $providerOptions['n'] ?? 1,
+            'num_images' => $providerOptions['num_images'] ?? $providerOptions['n'] ?? 1,
             'size' => $providerOptions['size'] ?? null,
             'response_format' => $providerOptions['response_format'] ?? 'url',
         ];
